@@ -1,0 +1,17 @@
+.logo {
+  margin: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+img{
+  margin: auto;
+display: block;
+}
+.li {
+  list-style: none;
+}
+.im2{float: left}
+.clear {clear: both;}
