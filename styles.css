@@ -1,17 +1,130 @@
-.logo {
-  margin: auto;
-  display: block;
+html, body { box-sizing: border-box; margin: 0; padding: 0;}
+*:before, *:after { box-sizing: inherite; }
+
+body {
+    font-family: Arial, Verdana;
+    font-size: 62.5%;
+}
+
+#wrapper {
+    background-color: rgb(55, 55, 55);
+    width: 960px;
+    height: auto;
+    margin: auto;
+}
+
+.header-prin {
+    height: auto;
+    background-color: #F1F2F1;
+    border-bottom: 5px solid #a6120d;
+    padding-bottom: 15px;
+}
+
+.logo-site {
+    display: block;
+    margin: auto;
+}
+
+.nav-principal {
+    height: 150px;
+    margin-left: 30px;
+}
+
+li {
+    font-size: 1.6em;
+    list-style: none;
+    margin-top: 10px;
 }
 
 a {
-  text-decoration: none;
+    color: #00404A;
+    text-decoration: none;
 }
-img{
-  margin: auto;
-display: block;
+
+a:hover {
+    text-decoration: underline;
+    color: #970904;
+    font-size: 1.07em;
 }
-.li {
-  list-style: none;
+
+.corps-page {
+    height: auto;
+    padding-bottom: 50px;
+    background-color: white;
+    box-shadow: 1px 1px 12px black;
 }
-.im2{float: left}
-.clear {clear: both;}
+
+.corps-page2 {
+    height: auto;
+    box-shadow: 1px 1px 12px black;
+    text-align: center;
+}
+
+.presentation {
+    padding: 1px 0;
+}
+
+.titre {
+    font-size: 1.9em;
+    text-align: center;
+    width: 200px;
+    background-color: #ccc;
+    color: #a6120d;
+    padding: 8px;
+    border-radius: 0 5px 5px 0;
+}
+
+.titre:first-child {
+    margin-top: 50px;
+}
+
+.titre-right {
+    width: 200px;
+    font-size: 1.9em;
+    text-align: center;
+    float: right;
+    background-color: #a6120d;
+    color: white;
+    padding: 8px;
+    border-radius: 5px 0 0 5px;
+}
+
+.paragraphe {
+    width: 600px;
+    margin: 25px auto;
+    text-align: justify;
+    font-size: 1.5em;
+}
+
+.clear {
+    clear: both;
+}
+
+.liststyle {
+    list-style: circle;
+    width: 600px;
+    text-align: justify;
+    margin: auto;
+}
+
+.center {
+    vertical-align: middle;
+    margin-top: 30px;
+}
+
+.code {
+    width: 500px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.video {
+    width: 456.8px;
+    height: 344px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.source {
+    margin-top: 50px;
+}

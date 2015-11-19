@@ -1,79 +1,151 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <title>Projet AngularJS</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <img class="logo" alt="logo angularJS" src="img/angularjs-logo.png" />
-      <nav>
-        <ul>
+    <head>
+        <meta charset="utf-8" />
+        <title>Projet AngularJS</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src='elevatezoom-master/jquery-1.8.3.min.js'></script>
+	    <script src='elevatezoom-master/jquery.elevatezoom.js'></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header class="header-prin">
+                <img class="logo-site" alt="logo du site" src="img/angularjs-logo.png" />
+                <nav class="nav-principal">
+                    <ul>
+                        <li><a href="#histoire">Histoire</a></li>
+                        <li><a href="#notions_de_base">Notions de base</a></li>
+                        <li><a href="#liens_utiles">Liens Utiles</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section class="corps-page">
+                <article class="presentation">
+                    <h2 id="histoire" class="titre">Fondements</h2>
+                    <p class="paragraphe clear">AngularJS est né en 2009 dans les locaux de Google.
+                    Deux développeurs du nom de Brad Green et Shyam Seshadri commençaient sérieusement à déprimer devant leur projet appelé "Google Feedback".
+                    Une immense frustration les envahissait au fur et à mesure que leur code grandissait, celui-ci comptait approximativement 17 000 lignes à ce moment-là.
+                    Autant de lignes de pur front-end qui sont intestables et donc difficilement maintenables.
+                    C'est à ce moment-là que Shyam Seshadri proposa de redévelopper entièrement la solution avec un framework fait maison, au bout de trois semaines, l'application ne comptait plus que 1 500 lignes de codes, parfaitement testées.
+                    À compter de ce jour, les autres développeurs de l'équipe ont décidé de prendre en main ce framework et de travailler avec au quotidien. Une histoire est née, l'histoire d'un framework que l'on nommera AngularJS. </p>
+                </article>
+                <article class="presentation">
+                    <h2 class="titre-right">Concept</h2>
+                    <p class="paragraphe clear">
+                        Angular est construit autour de concepts clés sur lesquels nous reviendront largement au cours de ce tuto. Comprenez bien que Shyam Seshadri, lorsqu'il créa
+                        Angular, n'a rien inventé. Il n'a fait qu'utiliser à bon escient des concepts et des bonnes pratiques incontournables dans le monde du développement web actuel.
+                        <ul>
+                            <li class="liststyle"><b>Architecture MVC (Modèle-Vue-Contrôleur) :</b> si vous connaissez le développement, vous avez sûrement entendu parler de ce type d'architecture incontournable qui consiste à avoir une stricte séparation entre les données (Modèle), la présentation des données (Vue), et les actions que l'on peut effectuer sur ces données (Contrôleur)</li>
+                            <li class="liststyle"><b>Data Binding :</b> nous y reviendrons très largement au cours des prochains chapitres. Juste pour vous donner un avant-goût, je vous indique que, grâce à ce concept, les liens entre votre code HTML et JavaScript ne seront que plus forts.</li>
+                            <li class="liststyle"><b>Injection de dépendances :</b> tout comme l'architecture MVC, lorsque l'on parle d'injection de dépendances, on parle d'un concept prépondérant dans tout développement. Grâce à cela, les modules que vous développerez n'auront plus à se soucier d'instancier leurs dépendances.</li>
+                            <li class="liststyle"><b>La manipulation du DOM au moyen de directives :</b> la manipulation du DOM conduit souvent à la création de code difficilement maintenable et difficilement testable. Nous verrons qu'avec Angular, ce n'est plus le cas du tout !</li>
+                        </ul>
+                    </p>
+                </article>
 
-          <li class="li"><a href="#lol2">Histoire</a></li>
-          <li class="li"><a href="#lol3">Notion de base</a></li>
-          <li class="li"><a href="#lol4">Liens utiles</a></li>
-        </ul>
-      </nav>
-    </header>
-    <h2 id="lol2">Fondements</h2>
-    <p>
-      AngularJS est né en 2009 dans les locaux de Google. Deux développeurs du nom de Brad Green et Shyam Seshadri commençaient sérieusement à déprimer devant leur projet appelé "Google Feedback". Une immense frustration les envahissait au fur et à mesure que leur code grandissait. Celui-ci comptait approximativement 17 000 lignes à ce moment-là. Autant de lignes de pur front-end  qui sont intestables et donc difficilement maintenables.
+                <article class="presentation">
+                    <h2 id="notions_de_base" class="titre">Quelques notions essentielles</h2>
+                    <p class="paragraphe">Pour comprendre comment fonctionne AngularJS, il est essentiel d'avoir les idées claires à propos de quelques points propres au développement 4web. Cette section en fait un rapide tour d'horizon. </p>
+                </article>
+                <article class="presentation">
+                    <h2 class="titre-right">Front-end & back-end</h2>
+                    <p class="paragraphe clear">
+                        <b>Front-end :</b> C'est la partie visible d'un site web. Autrement dit, tout ce que le visiteur télécharge depuis le serveur lorsqu'il charge une page. On y
+                        trouve donc le HTML, le CSS et bien sûr le Javascript. C'est précisément à ce niveau qu'intervient AngularJS
+                    </p>
 
-C'est à ce moment-là que Shyam Seshadri proposa de redévelopper entièrement la solution avec un framework fait maison. Au bout de trois semaines, l'application ne comptait plus que 1 500 lignes de codes, parfaitement testées.
+                    <p class="paragraphe margin-top">
+                        <b>back-end :</b> C'est la logique de l'application, autrement dit la partie du code qui est exécutée sur le serveur lorsqu'une requête est reçue. Généralement écrit
+                        en PHP, ASP.NET ou encore en JAVA, ce code renvoie les résultats qu'il a obtenu en fonction de tous les paramêtres à prendre en compte (le profil du visiteur
+                        par exemple). Habituellement composé de trois parties (un serveur, une application et une base de données), le back-end est donc en quelque sorte la boîte noire
+                        du site pour le visiteur : il ne sait pas ce qui s'y passe mais ça fonctionne. D'un point de vue temporel, on a le schéma suivant :
+                    </p>
+                </article>
+            </section>
+            <section class="corps-page2">
+                <img class="center" alt="image schema" src="img/bf-end.png" width="640" height="480px" />
+            </section>
 
-À compter de ce jour, les autres développeurs de l'équipe ont décidé de prendre en main ce framework et de travailler avec au quotidien. Une histoire est née, l'histoire d'un framework que l'on nommera AngularJS.
-    </p>
-    <h2>Concept</h2>
-    <p>
-      Angular est construit autour de concepts clés sur lesquels nous reviendront largement au cours de ce tuto. Comprenez bien que Shyam Seshadri, lorsqu'il créa Angular, n'a rien inventé. Il n'a fait qu'utiliser à bon escient des concepts et des bonnes pratiques incontournables dans le monde du développement web actuel.
-    </p>
-    <ul>
-      <li><b>Architecture MVC (Modèle-Vue-Contrôleur) :</b> si vous connaissez le développement, vous avez sûrement entendu parler de ce type d'architecture incontournable qui consiste à avoir une stricte séparation entre les données (Modèle), la présentation des données (Vue), et les actions que l'on peut effectuer sur ces données (Contrôleur)</li>
-      <li><b>Data Binding :</b> nous y reviendrons très largement au cours des prochains chapitres. Juste pour vous donner un avant-goût, je vous indique que, grâce à ce concept, les liens entre votre code HTML et JavaScript ne seront que plus forts. </li>
-      <li><b>Injection de dépendances :</b> tout comme l'architecture MVC, lorsque l'on parle d'injection de dépendances, on parle d'un concept prépondérant dans tout développement. Grâce à cela, les modules que vous développerez n'auront plus à se soucier d'instancier leurs dépendances.</li>
-      <li><b>La manipulation du DOM au moyen de directives :</b> la manipulation du DOM conduit souvent à la création de code difficilement maintenable et difficilement testable. Nous verrons qu'avec Angular, ce n'est plus le cas du tout !</li>
-    </ul>
-    <h2 id="lol3">Quelques notions essentielles</h2>
-    <p>Pour comprendre comment fonctionne AngularJS, il est essentiel d'avoir les idées claires à propos de quelques points propres au développement web. Cette section en fait un rapide tour d'horizon.
-    <p>
-      <h3>Front-end & back-end</h3>
-    <p>
-      <b>Front-end</b>
-C'est la partie visible d'un site web. Autrement dit, tout ce que le visiteur télécharge depuis le serveur lorsqu'il charge une page. On y trouve donc le HTML, le CSS et bien sûr le Javascript. C'est précisément à ce niveau qu'intervient AngularJS.
+            <section class="corps-page">
+                <article class="presentation">
+                    <h2 id="histoire" class="titre">Qu'est-ce qu'un framework ?</h2>
+                    <p class="paragraphe clear">Un framework est un ensemble cohérent de composants logiciels, autrement dit, un ensemble de fonctions, méthodes, objets, etc... mais
+                        aussi avec une logique propre permettant de développer rapidement une application. Le framework est une grande coquille structurée mais vide au sein de laquelle
+                        vous allez définir vos propres modules tout en respectant la syntaxe imposée. Ceci le distingue donc fortement d'une simple librairie de fonctions utilisée
+                        indépendemment d'une structure spécifique. D'ailleurs, il n'est pas rare qu'un framework regroupe plusieurs librairies. Par exemple, AngularJS implémente
+                        nativement une version allégée de jQuery, appelée jqLite.</p>
+                    <p class="paragraphe clear">Bien entendu, si vous avez déjà travaillé avec un framework, vous ne serez pas déboussolé par AngularJS. Par contre, si, comme beaucoup
+                        de développeurs web, vous avez jusqu'ici implémenté votre front-end avec de simples librairies javascript (comme jQuery dans son utilisation courante), il va
+                        falloir oublier complètement votre approche du DOM et autres particularités du web.</p>
+                    <p class="paragraphe clear">Vous n'écrirez plus votre code de façon désordonnée, mais vous aurez une véritable structure propre et lisible. Non pas que développer
+                        avec jQuery implique de tout regrouper en un seul fichier gigantesque ou que ce soit un mauvais outil, mais le développeur qui avance progressivement dans son
+                        code ne fait pas forcément l'effort de l'ordonner de façon cohérente et logique. On ajoute généralement des fonctionnalités à notre front-end peu à peu. Et pour
+                        réorganiser tout ça, on perd beaucoup de temps et ne pas le faire affecte la vitesse de chargement de vos pages. De plus, il n'est pas rare d'avoir des
+                        comportements inattendus lorsqu'on code de cette façon. Ceci est dû aux particularités de Javascript qui n'est pas un langage orienté objet (comme JAVA ou PHP 5
+                        par exemple) ou procédural (comme le C).</p>
+                </article>
+                <article class="presentation">
+                    <h2 class="titre-right">Les spécificités d'AngularJS</h2>
+                    <p class="paragraphe clear">
+                        Angular est construit autour de concepts clés sur lesquels nous reviendront largement au cours de ce tuto. Comprenez bien que Shyam Seshadri, lorsqu'il créa
+                        Angular, n'a rien inventé. Il n'a fait qu'utiliser à bon escient des concepts et des bonnes pratiques incontournables dans le monde du développement web actuel.
+                        <ul>
+                            <li class="liststyle"><b>Architecture MVC (Modèle-Vue-Contrôleur) :</b> si vous connaissez le développement, vous avez sûrement entendu parler de ce type d'architecture incontournable qui consiste à avoir une stricte séparation entre les données (Modèle), la présentation des données (Vue), et les actions que l'on peut effectuer sur ces données (Contrôleur)</li>
+                            <li class="liststyle"><b>Data Binding :</b> nous y reviendrons très largement au cours des prochains chapitres. Juste pour vous donner un avant-goût, je vous indique que, grâce à ce concept, les liens entre votre code HTML et JavaScript ne seront que plus forts.</li>
+                            <li class="liststyle"><b>Injection de dépendances :</b> tout comme l'architecture MVC, lorsque l'on parle d'injection de dépendances, on parle d'un concept prépondérant dans tout développement. Grâce à cela, les modules que vous développerez n'auront plus à se soucier d'instancier leurs dépendances.</li>
+                            <li class="liststyle"><b>La manipulation du DOM au moyen de directives :</b> la manipulation du DOM conduit souvent à la création de code difficilement maintenable et difficilement testable. Nous verrons qu'avec Angular, ce n'est plus le cas du tout !</li>
+                        </ul>
+                    </p>
+                </article>
 
-<b>back-end</b>
-C'est la logique de l'application, autrement dit la partie du code qui est exécutée sur le serveur lorsqu'une requête est reçue. Généralement écrit en PHP, ASP.NET ou encore en JAVA, ce code renvoie les résultats qu'il a obtenu en fonction de tous les paramêtres à prendre en compte (le profil du visiteur par exemple). Habituellement composé de trois parties (un serveur, une application et une base de données), le back-end est donc en quelque sorte la boîte noire du site pour le visiteur : il ne sait pas ce qui s'y passe mais ça fonctionne. D'un point de vue temporel, on a le schéma suivant :
-    </p>
-    <img src="http://www.tutoriel-angularjs.fr/web/img/build/tutoriel/bf-end.png" width="500px" height="500px"/>
-    <h3>Qu'est-ce qu'un framework ?</h3>
-<p>
-  Un framework est un ensemble cohérent de composants logiciels, autrement dit, un ensemble de fonctions, méthodes, objets, etc... mais aussi avec une logique propre permettant de développer rapidement une application. Le framework est une grande coquille structurée mais vide au sein de laquelle vous allez définir vos propres modules tout en respectant la syntaxe imposée.
-Ceci le distingue donc fortement d'une simple librairie de fonctions utilisée indépendemment d'une structure spécifique. D'ailleurs, il n'est pas rare qu'un framework regroupe plusieurs librairies. Par exemple, AngularJS implémente nativement une version allégée de jQuery, appelée jqLite.
-</br> Bien entendu, si vous avez déjà travaillé avec un framework, vous ne serez pas déboussolé par AngularJS. Par contre, si, comme beaucoup de développeurs web, vous avez jusqu'ici implémenté votre front-end avec de simples librairies javascript (comme jQuery dans son utilisation courante), il va falloir oublier complètement votre approche du DOM et autres particularités du web. </br>
-Vous n'écrirez plus votre code de façon désordonnée, mais vous aurez une véritable structure propre et lisible. Non pas que développer avec jQuery implique de tout regrouper en un seul fichier gigantesque ou que ce soit un mauvais outil, mais le développeur qui avance progressivement dans son code ne fait pas forcément l'effort de l'ordonner de façon cohérente et logique. On ajoute généralement des fonctionnalités à notre front-end peu à peu. Et pour réorganiser tout ça, on perd beaucoup de temps et ne pas le faire affecte la vitesse de chargement de vos pages.
-De plus, il n'est pas rare d'avoir des comportements inattendus lorsqu'on code de cette façon. Ceci est dû aux particularités de Javascript qui n'est pas un langage orienté objet (comme JAVA ou PHP 5 par exemple) ou procédural (comme le C).</p>
-</br> </br> <h1>Les spécificités d'AngularJS</h1>
- <h3>Développement back-end / front-end</h3></br>
-<p>
-  Les langages utilisés pour coder le back-end (comme PHP) sont très performants pour cette tâche mais s'avèrent inadaptés et inefficaces pour le front-end. D'ailleurs si on y pense un peu, ça paraît logique : alors que le back-end a besoin d'un langage qui puisse communiquer facilement avec tout type de base de données et qui soit très rapide à l'exécution même si la page est appelée plusieurs centaines de fois par seconde (par exemple PHP met en cache sur le serveur une version compilée du code source tant que celui-ci n'est pas modifié pour accroître ses performances), le front-end lui, a pour priorités la lisibilité, la simplicité syntaxique et la testabilité. Normalement, une personne qui ne code quasiment pas devrait pouvoir écrire les fichiers HTML du front-end sans être perdue (même si dans la pratique un front-end developer a quelques bases évidemment).</br>
-Ces incompatibilités entre PHP (ou tout autre langage classique de back-end) et le développement front-end ne sont pas neuves, et beaucoup de moteurs de templates ont vu le jour, comme Twig, ce qui vient confirmer la nécessité flagrante de les séparer.
-</br> <h3> La réponse d'AngularJS</h3>
-</br>  AngularJS est un framework Javascript qui permet de déplacer la logique de présentation du côté client et ainsi la séparer de la logique de l'application qui reste sur le serveur. Les données sont récupérées auprès de celui-ci via des requêtes HTTP. Enfin, celles-ci sont interprétées et affichées au visiteur indépendamment du serveur. Cette déportation permet de rendre la navigation sur le site internet beaucoup plus fluide pour le visiteur
+                <article class="presentation">
+                    <h2 id="notions_de_base" class="titre">Qu'est-ce qu'un framework ?</h2>
+                    <p class="paragraphe">Pour comprendre comment fonctionne AngularJS, il est essentiel d'avoir les idées claires à propos de quelques points propres au développement 4web. Cette section en fait un rapide tour d'horizon. </p>
+                </article>
+                <article class="presentation">
+                    <h2 class="titre-right">Front-end & back-end</h2>
+                    <p class="paragraphe clear">
+                        <b>Développement back-end / front-end</b> <br /><br /> Les langages utilisés pour coder le back-end (comme PHP) sont très performants pour cette tâche mais s'avèrent inadaptés
+                         et inefficaces pour le front-end. D'ailleurs si on y pense un peu, ça paraît logique : alors que le back-end a besoin d'un langage qui puisse communiquer
+                         facilement avec tout type de base de données et qui soit très rapide à l'exécution même si la page est appelée plusieurs centaines de fois par seconde
+                         (par exemple PHP met en cache sur le serveur une version compilée du code source tant que celui-ci n'est pas modifié pour accroître ses performances), le
+                         front-end lui, a pour priorités la lisibilité, la simplicité syntaxique et la testabilité.
+                         <br /><br />
+                         Normalement, une personne qui ne code quasiment pas devrait pouvoir écrire les fichiers HTML du front-end sans être perdue (même si dans la pratique un front-end
+                         developer a quelques bases évidemment).
+                         <br /><br />
+                         Ces incompatibilités entre PHP (ou tout autre langage classique de back-end) et le développement front-end ne sont pas neuves, et beaucoup de moteurs de templates ont
+                         vu le jour, comme Twig, ce qui vient confirmer la nécessité flagrante de les séparer.
+                    </p>
 
-</br> Cette approche permet donc de séparer complètement le back-end et le front-end, contrairement à l'architecture classique d'un site web. Elle est très utilisée pour les sites mono-pages à la mode en ce moment. Ces fameux one page reposent entièrement sur cette déportation de la logique de présentation, sans laquelle ils seraient très brouillons dans leur code et très difficiles à débugger. </br>Mais AngularJS ne se limite pas à ces one page ! Bien au contraire, il permet de développer des applications web complètes
-</p>
-</br> </br>
-
-<img class="im2" src="http://i1.wp.com/blog.osedea.com/wp-content/uploads/2014/03/Screen-Shot-2014-03-16-at-6.53.05-PM.png" width="600px" height="400px"/>
-<div class="clear"></div>
-<p style="color:gray">
-  une ligne de code avec du angular JS
-</p>
-<h3 id="lol4"> Quelques liens utiles </h3>
-<a href="http://www.grafikart.fr/formations/angularjs">grafikart.fr</a>
-<a href="https://angularjs.org/"> angularjs.org</a></body>
-<a href="https://angular.io/">angular.io</a>
-</br> </br> </br>
+                    <p class="paragraphe margin-top">
+                        <b>La réponse d'AngularJS</b> <br /><br /> AngularJS est un framework Javascript qui permet de déplacer la logique de présentation du côté client et ainsi la
+                        séparer de la logique de l'application qui reste sur le serveur. Les données sont récupérées auprès de celui-ci via des requêtes HTTP. Enfin, celles-ci sont
+                        interprétées et affichées au visiteur indépendamment du serveur.
+                         <br /><br />
+                         Cette déportation permet de rendre la navigation sur le site internet beaucoup plus fluide pour le visiteur
+                         Cette approche permet donc de séparer complètement le back-end et le front-end, contrairement à l'architecture classique d'un site web.
+                         Elle est très utilisée pour les sites mono-pages à la mode en ce moment.
+                         <br /><br />
+                         Ces fameux one page reposent entièrement sur cette déportation de la logique de présentation, sans laquelle ils seraient très brouillons dans leur code et très difficiles à débugger.
+                         Mais AngularJS ne se limite pas à ces one page ! Bien au contraire, il permet de développer des applications web complètes
+                    </p>
+                </article>
+                <section class="code-video">
+                    <div class="code"><img id="zoom_05" src="img/angular-code-small.png" data-zoom-image="img/angular-code.png" /></div>
+                    <div class="video">
+                        <iframe width="456.9px" height="344" src="https://www.youtube.com/embed/BTF5WrKj2mY" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </section>
+                <div class="source">
+                <a  href="https://www.youtube.com/watch?v=BTF5WrKj2mY"> <img class="youtube" src="http://genesaproduitsdentretien.com/wp-content/uploads/2014/08/youtube-logo.png" width="50" height="50"> </a>
+                <a href="http://www.tutoriel-angularjs.fr/"> <img class="ta"src="http://www.tutoriel-angularjs.fr/web/img/build/logo.png" width="50" height="50" /> </a> </br>
+                <a style="color:#009900" href="http://blog.osedea.com/2014/03/">http://blog.osedea.com/ </a>
+                <div>
+            </section>
+        </div>
+        <script>
+    $("#zoom_05").elevateZoom({ zoomType : "inner", cursor: "crosshair" });
+</script>
+    </body>
 </html>
